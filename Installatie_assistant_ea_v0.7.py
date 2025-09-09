@@ -324,10 +324,6 @@ def select_directory():
         # Detecteer standaard silent parameter
         param = detect_silent_parameter(full_path)
 
-        # Speciaal geval voor SentinelOne.msi
-        if "sentinelone" in file_name.lower():
-            param = '/q SITE_TOKEN="eyJ1cmwiOiAiaHR0cHM6Ly9ldWNlMS1zd3ByZDIuc2VudGluZWxvbmUubmV0IiwgInNpdGVfa2V5IjogImYzYjg2NmQwMTU5NzNiY2MifQ==" /NORESTART'
-
 
         # --- Nieuw: installatie-check ---
         if not hasattr(root, "dynamic_display_names"):
@@ -575,6 +571,7 @@ def generate_known_display_names_from_csv(installer_folder, csv_path="C:/Temp/ge
         print(f'"{k}": "{v}",')
 
     return mapping
+
 
 
 root.mainloop()
